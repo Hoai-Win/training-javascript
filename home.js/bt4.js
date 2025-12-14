@@ -1,5 +1,9 @@
-function daoNguoc(str) {
-    return str.split("").reverse().join("");
+function reverseStringLoop(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i]; // Thêm từng ký tự vào chuỗi mới từ cuối lên đầu
+  }
+  return reversed;
 }
 
-console.log(daoNguoc("hello"));
+console.log(reverseStringLoop("JavaScript")); // Kết quả: "tpircSavaJ"

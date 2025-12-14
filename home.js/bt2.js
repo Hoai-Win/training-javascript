@@ -1,9 +1,17 @@
 const ktsoChanle = prompt("nhap so bat ky");
 
-if(ktsoChanle % 2 === 0) {
-  console.log("so chan")
-}
+function checkNumber (num) {
+  if(typeof num !== 'number') {
+    console.log("hay nhap so")
+    return
+  }
 
-else {
+  if(num % 2 == 0){
+    console.log("so chan")
+    return
+  }
+  
   console.log("so le")
 }
+
+checkNumber(ktsoChanle)

@@ -1,25 +1,20 @@
-function formatCurrency(num) {
-  let numStr = num.toString();
-
-  let [integerPart, decimalPart] = numStr.split(".");
-
-  let formattedInteger = "";
-  while (integerPart.length > 3) {
-
-    formattedInteger = "," + integerPart.slice(-3) + formattedInteger;
-    
-    integerPart = integerPart.slice(0, integerPart.length - 3);
-  }
-
-  formattedInteger = integerPart + formattedInteger;
-
-
-  if (decimalPart) {
-    return formattedInteger + "." + decimalPart;
-  }
-
-  return formattedInteger;
+function format1(n, currency) {
+  return currency + n.toFixed(2).replace(/./g, function(c, i, a) {
+    return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+  });
 }
 
-console.log(formatCurrency(1234567)); 
-console.log(formatCurrency(1234567.89)); 
+function format2(n, currency) {
+  return currency + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+}
+
+
+var numbers = [1, 12, 123, 1234, 12345, 123456, 1234567, 12345.67];
+
+for (var i = 0; i < numbers.length; i++) {
+ console.log(format1(numbers[i], '£ '));
+}
+
+for (var i = 0; i < numbers.length; i++) {
+ console.log(format2(numbers[i], 'vnd '));
+}

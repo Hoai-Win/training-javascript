@@ -4,17 +4,24 @@ function mostFrequent(arr) {
     return acc;
   }, {});
 
-  let maxCount = 0;
-  let mostFrequentNum = arr[0];
+  console.log(freqMap);
+  
 
-  for (const num in freqMap) {
+  let maxCount = 0;
+  // {1: 3, 2: 1, 3: 2}
+
+  for (let num in freqMap) {
     if (freqMap[num] > maxCount) {
       maxCount = freqMap[num];
-      mostFrequentNum = num;
     }
   }
 
-  return mostFrequentNum;
+  console.log("v", maxCount);
+  
+
+  return freqMap[maxCount];
 }
 
-console.log(mostFrequent([1, 3, 1, 2, 3, 1])); 
+console.log(mostFrequent([1, 3, 1, 2, 3, 1]));
+
+// làm lại

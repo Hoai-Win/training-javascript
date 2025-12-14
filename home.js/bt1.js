@@ -1,7 +1,7 @@
-function tinhTong(a, b) {
+function sum(a, b) {
   return a + b;
 }
 
 let so1 = Number(prompt("Nhap so thu 1:"));
 let so2 = Number(prompt("nhap so thu 2:"));
-console.log(tinhTong(num1,num2))
+console.log(sum(so1,so2))

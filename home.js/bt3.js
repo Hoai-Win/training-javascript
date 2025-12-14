@@ -1,2 +1,2 @@
-const lenght = prompt("nhap bat ky");
-console.log(lenght.length)
+const result = prompt("nhap bat ky");
+console.log(result.length)
